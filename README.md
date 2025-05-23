@@ -155,30 +155,29 @@ Write C program for the below pyramid string pattern. Enter a string: PROGRAM En
 ```
 #include <stdio.h>
 #include <string.h>
-
-int main() 
-{
-    char str[100];
-    int num_rows;
-    scanf("%s", str);
+int main() {
+    char str[] = "PROGRAM";
+    int num_rows, len = strlen(str);
     scanf("%d", &num_rows);
-    int len = strlen(str);
-    int midpoint = (2 * num_rows - 1) / 2;  
-    for (int i = 1; i <= num_rows; i++) 
-    {
-        for (int j = 0; j < len; j++) 
-        {
-            printf("%c ", str[j]);
+    printf("Enter number of rows: %d\n",num_rows);
+    int midpoint = (2 * num_rows - 1) / 2;
+    for (int i = 1; i <= num_rows; i++) {
+        int j;
+        for (j = 0; j < num_rows - i; j++) {
+            printf(" ");
         }
-        printf("\n"); 
+        for (j = 0; j < (2 * i - 1); j++) {
+            printf("%c", str[j % len]);
+        }
+        printf("\n");
     }
     return 0;
 }
+
 ```
  ## OUTPUT
-![image](https://github.com/user-attachments/assets/b3538d01-8031-4512-87b1-090814fa615c)
+![Screenshot 2025-05-23 110233](https://github.com/user-attachments/assets/b8701ad2-8e3d-4a73-8f82-98b3f816906b)
 
- 
 
 ## RESULT
 
